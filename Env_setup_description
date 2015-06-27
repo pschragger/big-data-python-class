@@ -17,6 +17,8 @@ https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python
         pydev installed from the marketplace http://marketplace.eclipse.org/content/pydev-python-ide-eclipse
   c. Spyder: https://github.com/spyder-ide/spyder
     Download from:  https://github.com/spyder-ide/spyder/archive/master.zip
+    Unzip the directory structure
+    cde to the spyder-master directory and run:  python setup.py install
   
   d.or just use test edit tools:
     i. vim:    http://www.vim.org/download.php
