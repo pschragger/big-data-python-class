@@ -1,0 +1,27 @@
+# Basic setup code for the class
+
+1. Python 2.7
+
+Reccommend using the anaconda python 2.7.9 distribution since is comes with most of the desired packages. 
+[http://continuum.io/downloads]
+
+2. Google App engine  ( for web development this is not as yet required but I am looking how to integrate this in the class)
+
+https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python
+
+
+3. And IDE - I have not decided as yet which will be be best ... But I am leaning towards spyder..
+  a. pycharm by jetbrains:  https://www.jetbrains.com/pycharm/download/  ( get the education license if you are in my class)
+  b. eclipse by eclipse: https://www.eclipse.org/downloads/packages/
+        but check first with ones are supported by:  (always free )
+        pydev installed from the marketplace http://marketplace.eclipse.org/content/pydev-python-ide-eclipse
+  c. Spyder: https://github.com/spyder-ide/spyder
+  
+  d.or just use test edit tools:
+    i. vim:    http://www.vim.org/download.php
+    ii. emacs:  windows version: http://sourceforge.net/projects/emacsbinw64/
+            http://emacswiki.org/emacs/PythonProgrammingInEmacs
+    iii. sublime text:  http://www.sublimetext.com/
+    
+    
+    
