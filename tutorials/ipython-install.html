@@ -1,0 +1,76 @@
+<html>
+<header>
+<title> IPython Installation Tutorial</title>
+</header>
+<body>
+<h1>Ipython</h1>
+
+<h2>Installation</h2>
+
+Use Anaconda from continuum.io - <a href="http://continuum.io/downloads">http://continuum.io/downloads </a>.  Use the installer for windows, mac or linux.  
+Be sure to use 2.7 python (Do not use 3.4 )
+
+After the installation, find the packages installed by thing the command line instruction  "conda list".
+
+Look at the available packages from continuum.io as well as the defaults:
+<a href="http://docs.continuum.io/anaconda/pkg-docs">http://docs.continuum.io/anaconda/pkg-docs</a>
+
+<h2>Python test</h2>
+You should test to see that ananconda has been put in the path of your application lookup by using command line test:
+<pre>
+>python
+Python 2.7.10 |Anaconda 2.3.0 (64-bit)| (default, May 28 2015, 17:02:03) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+Anaconda is brought to you by Continuum Analytics.
+Please check out: http://continuum.io/thanks and https://binstar.org
+>>> a=2
+>>> a
+2
+>>> quit()
+</pre>
+
+Next try out the ipython notebook interface.
+Details of ipython can be found at: <a href="http://ipython.org">http://ipython.org</a>.
+My current versions is 3.2 but other versions will be documented at this site.
+
+At the command line run:
+<pre>
+mkdir notebooktutorial
+cd notebook tutorial
+ipython notebook
+</pre>
+This should open a browser window at localhost:8888/tree.
+Create a new python 2 notebook and under file rename it Test1.
+in the IN [1]: box enter:
+<pre>
+In [1]: a=2
+        a
+</pre> 
+The result should show as:
+<pre>
+Out [1]: 2
+</pre>
+
+Using spyder ( a python IDE that comes with anaconda )
+
+Create a new python file with:
+
+<pre>
+a=2
+print(2)
+</pre>
+Open a python or ipython console and press the run button.  The output should show 2 after the runfile('path/nameofile.py', wdir='path/of/working/directory') is automatically invoked.
+
+<h2>Matlab test</h2>
+
+In your Test1  In[2] enter:
+<pre>
+from matlotlib.pylab import *
+import numpy as np
+%matplotlib inline
+plot(np.arange(10)**2)
+</pre>
+A graph should show up in your notebook.
+</pre>
+</body></html>
