@@ -16,7 +16,8 @@ from mrjob.job import MRJob
 #from metrics import  correlation
 from numpy import correlate as correlation
 #from metrics import cosine, regularized_correlation
-from numpy import cos as cosine
+#from numpy import cos as cosine
+
 from math import sqrt
 
 try:
@@ -27,6 +28,57 @@ except ImportError:
 
 PRIOR_COUNT = 10
 PRIOR_CORRELATION = 0
+def correlation(size, dot_product, rating_sum, \
+            rating2sum, rating_norm_squared, rating2_norm_squared):
+    numberator = size* rating2sum -
+
+def cosine(dot_product, rating_norm_squared, rating2_norm_squared):
+    '''
+    The cosine between two vectors A, B
+       dotProduct(A, B) / (norm(A) * norm(B))
+    '''
+    numerator = dot_product
+    denominator = rating_norm_squared * rating2_norm_squared
+
+    return (numerator / (float(denominator))) if denominator else 0.0
+ 
+def regularized_correlation(size, dot_product, rating_sum, \
+            rating2sum, rating_norm_squared, rating2_norm_squared,
+            virtual_cont, prior_correlation):
+    '''
+    The Regularized Correlation between two vectors A, B
+    RegularizedCorrelation = w * ActualCorrelation + (1 - w) * PriorCorrelation
+        where w = # actualPairs / (# actualPairs + # virtualPairs).
+    '''
+    unregularizedCorrelation = correlation(size, dot_product, rating_sum, \
+            rating2sum, rating_norm_squared, rating2_norm_squared)
+
+    w = size / float(size + virtual_cont)
+
+    return w * unregularizedCorrelation + (1.0 - w) * prior_correlation
+def regularized_correlation(size, dot_product, rating_sum, \
+            rating2sum, rating_norm_squared, rating2_norm_squared,
+            virtual_cont, prior_correlation):
+    '''
+    The Regularized Correlation between two vectors A, B
+    RegularizedCorrelation = w * ActualCorrelation + (1 - w) * PriorCorrelation
+        where w = # actualPairs / (# actualPairs + # virtualPairs).
+    '''
+    unregularizedCorrelation = correlation(size, dot_product, rating_sum, \
+            rating2sum, rating_norm_squared, rating2_norm_squared)
+
+    w = size / float(size + virtual_cont)
+
+    return w * unregularizedCorrelation + (1.0 - w)
+
+def jaccard(users_in_common, total_users1, total_users2):
+    '''
+    The Jaccard Similarity between 2 two vectors
+        |Intersection(A, B)| / |Union(A, B)|
+    '''
+    union = total_users1 + total_users2 - users_in_common
+
+    return (users_in_common / (float(union))) if union else 0.0
 
 
 class SemicolonValueProtocol(object):
@@ -62,7 +114,7 @@ class MoviesSimilarities(MRJob):
         87  21,2
         98  19,2
         """
-        user_id, item_id, rating = line.split('|')
+        user_id, item_id, rating, timestamp = line.split('\t')
         #yield (item_id, int(rating)), user_id
         #yield item_id, (user_id, int(rating))
         yield  user_id, (item_id, float(rating))
@@ -126,6 +178,8 @@ class MoviesSimilarities(MRJob):
         sum_xx, sum_xy, sum_yy, sum_x, sum_y, n = (0.0, 0.0, 0.0, 0.0, 0.0, 0)
         item_pair, co_ratings = pair_key, lines
         item_xname, item_yname = item_pair
+        items_x = []
+        items_y = []
         for item_x, item_y in lines:
             sum_xx += item_x * item_x
             sum_yy += item_y * item_y
@@ -133,10 +187,13 @@ class MoviesSimilarities(MRJob):
             sum_y += item_y
             sum_x += item_x
             n += 1
+       #     items_x.append(item_x)
+       #     items_y.append(item_y)
 
         corr_sim = correlation(n, sum_xy, sum_x, \
-                 sum_y, sum_xx, sum_yy)
-
+                sum_y, sum_xx, sum_yy)
+        #corr_sim = correlation(items_x, items_y)
+    
         reg_corr_sim = regularized_correlation(n, sum_xy, sum_x, \
                 sum_y, sum_xx, sum_yy, PRIOR_COUNT, PRIOR_CORRELATION)
 
