@@ -1,0 +1,31 @@
+Make jupyter python 2 notebook pages that teaches:
+
+A. The difference between python lists and tuples
+Lists are collections of data … more often homogenous or of more limited ranges of types. 
+The notion of tuple as a “record type” … sort of a lightweight object with attributes but no methods 
+The difference between list and tuple is that lists are mutable and tuples are immutable.
+
+Show how to use them in:
+1) if statements
+2) for loops
+3) lambdas
+be sure to demonstrate mutablity or immuability and issues that can be created
+
+B. Use of dictionaries
+
+1) creation of dict
+2) access, modify, and delete dict items
+3) merge dictionaires
+4) loop over
+
+  i. keys
+  ii. values
+  iii. Items
+
+For more than 3 points you can add meaningful sections to the two pages
+and create more pages on other interesting aspects of basic python, for example random functions, regexp, map/reduce, file manipulations...
+Be sure to name your file
+LASTNAME_HOMEWORK2_LIST_AND_TUPLES_TUTORIAL_Fall_2017.ipynb
+LASTNAME_HOMEWORK2_DICTIONARY_TUTORIAL_Fall_2017.ipynb
+You can upload the files or the zip of all the files.
+Or put them in your homework directory and send me the link in the upload or both.
