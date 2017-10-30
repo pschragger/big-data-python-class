@@ -1,13 +1,14 @@
+# %load code/twitter_streaming.py
 #Import the necessary methods from tweepy library
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 
 #Variables that contains the user credentials to access Twitter API 
-access_token = "ENTER YOUR ACCESS TOKEN"
-access_token_secret = "ENTER YOUR ACCESS TOKEN SECRET"
-consumer_key = "ENTER YOUR API KEY"
-consumer_secret = "ENTER YOUR API SECRET"
+access_token = "YOUR_ACCESS_TOKEN"
+access_token_secret = "YOUR_TOKEN_SECRET"
+consumer_key = "YOUR_CONSUMER_KEY"
+consumer_secret = "YOUR_CONSUMER_SECRET"
 
 
 #This is a basic listener that just prints received tweets to stdout.
