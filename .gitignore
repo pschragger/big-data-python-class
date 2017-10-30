@@ -65,3 +65,11 @@ Shortcut.lnk
 *checkpoint.ipynb
 scientific-python-lectures-master/
 statistical-analysis-python-tutorial-master/
+
+#virtualenv stuff
+bin/*
+lib/*
+share/*
+include/*
+pip-selfcheck.json
+
