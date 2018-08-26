@@ -1,30 +1,87 @@
-# Basic setup code for the class
+# Installation
+Use Anaconda https://www.anaconda.com/distribution/
 
-1. Python 2.7
+Use the installer for windows, mac or linux. Be sure to use 2.7 python (Do not use 3.6 ) Our text books examples are in 2.7 and 3.x is not backward compatible.  
 
-Reccommend using the anaconda python 2.7.9 distribution since is comes with most of the desired packages. 
-[http://continuum.io/downloads]
+The download and installation will probably take some time. You are installing most of what you will need for this class.. ( I am trying the MS VSCode installation as well it comes on the Windows installer)
 
-2. Google App engine  ( for web development this is not as yet required but I am looking how to integrate this in the class)
+After the installation, find the packages installed
 
-https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python
+https://docs.anaconda.com/anaconda/user-guide/getting-started
+
+You should be able to find:
+
+-Jupyter notebook
+
+-Visual Studio Code ( if you installed it)
+
+-Spyder
+
+-anaconda prompt
+
+-ananconda navigator
 
 
-3. And IDE - I have not decided as yet which will be be best ... But I am leaning towards spyder..
-  a. pycharm by jetbrains:  https://www.jetbrains.com/pycharm/download/  ( get the education license if you are in my class)
-  b. eclipse by eclipse: https://www.eclipse.org/downloads/packages/
-        but check first with ones are supported by:  (always free )
-        pydev installed from the marketplace http://marketplace.eclipse.org/content/pydev-python-ide-eclipse
-  c. Spyder: https://github.com/spyder-ide/spyder
-    Download from:  https://github.com/spyder-ide/spyder/archive/master.zip
-    Unzip the directory structure
-    cde to the spyder-master directory and run:  python setup.py install
-  
-  d.or just use test edit tools:
-    i. vim:    http://www.vim.org/download.php
-    ii. emacs:  windows version: http://sourceforge.net/projects/emacsbinw64/
-            http://emacswiki.org/emacs/PythonProgrammingInEmacs
-    iii. sublime text:  http://www.sublimetext.com/
-    
+
+##Python test
+You should test to see that the correct python has been installed 
+
+Run anaconda prompt and the > type the bolded commands:
+
+(base) \your install directory\>  python
+
+Python 2.7.15 |Anaconda Inc. | (default, May 1 2018, 18:37:09)  ......
+>>> a=2
+>>> a
+2
+>>> quit()
+(base) \your install directory\>
+
+##Jupyter Notebook
+
+Next try out the jupyter notebook interface. 
+
+Use ctrl-C to stop it
+
+In the jupyter window:
+
+Create a new folder:  
+
+It will be named "Untitled Folder" select its checkbox and rename  it to:
+
+Testing-python
+
+click into this new directory and 
+
+Create a new python 2 notebook and under file rename it Test1 . in the IN [1]: box enter:
+
+In [1]: a=2
+        a
+Press ">| run" button The result should show as:
+
+Out [1]: 2
+
+
+##SPYDER
+
+Now open spyder ( a python IDE that comes with anaconda ) Create a new python file with:
+
+a=2
+print a
+
+press the run button. The output should show 2
+
+after the runfile('path/nameofile.py', wdir='path/of/working/directory') is automatically invoked.
+
+##Matplot test
+In your jupyter file Test1 In[2] enter:
+
+from matplotlib.pylab import *
+import numpy as np
+%matplotlib inline
+plot(np.arange(10)**2)
+A graph should show up in your notebook.
+
+You are now ready to rock the data world! 
     
     
