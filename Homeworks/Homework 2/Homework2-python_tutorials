@@ -25,8 +25,10 @@ B. Use of dictionaries
 For more than 3 points you can add meaningful sections to the two pages
 and create more pages on other interesting aspects of basic python, for example random functions, regexp, map/reduce, file manipulations...
 Be sure to name your file
-LASTNAME_HOMEWORK2_LIST_AND_TUPLES_TUTORIAL_Fall_2017.ipynb
-LASTNAME_HOMEWORK2_DICTIONARY_TUTORIAL_Fall_2017.ipynb
+LASTNAME_HOMEWORK2_LIST_AND_TUPLES_TUTORIAL_Fall_2018.ipynb
+LASTNAME_HOMEWORK2_DICTIONARY_TUTORIAL_Fall_2018.ipynb
+LASTNAME_HOMEWORK2_OTHER_TUTORIAL_Fall_2018.ipynb
+
 You can upload the files or the zip of all the files.
 Or put them in your homework directory in your big-data-python-class  
 github repo and send me the url in the submissions or both.
